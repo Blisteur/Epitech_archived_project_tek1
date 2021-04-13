@@ -1,0 +1,12 @@
+USAGE:
+  ./my_defender
+  In game, press 'q' to quit and 'Esc' to pause.
+  Use either left or right click to interact with the game elements.
+
+DESCRIPTION:
+  This is a tower defense game.
+  You must prevent the vehicles and soldier from reaching your base.
+  When you have enough money, a tower's price will turn yellow.
+  Drag and drop the tower in a valid spot to buy the tower.
+  You lose when your health reaches 0.
+  Enemies spawn every 30 seconds. Good luck!

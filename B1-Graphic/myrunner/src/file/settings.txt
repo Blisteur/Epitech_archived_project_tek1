@@ -1,0 +1,11 @@
+RESOLUTION:{1920*1080}
+FULLSCREEN:{0}
+BITS_PER_PIXEL:{32}
+FPS:{60}
+
+/--------------------HELP-SETTINGS------------------------\
+RESOLUTION:{width*height}
+FULLSCREEN:{0 or 1} 0 for false 1 for true
+BITS_PER_PIXEL:{number of bits per pixel}
+FPS:{number of frames per second}
+/---------------------------------------------------------\

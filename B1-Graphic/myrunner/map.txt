@@ -1,0 +1,9 @@
+1011001010100110101010101100011000101010101010101010110010011000110102
+
+/--------------------------------MAPS-SETTINGS--------------------------------\
+    0 for nothing.
+    1 for random enemie.
+    2 for stop the map.
+                                    WARNING:
+        if the last enemy is passed you win, even if there are 0 remaining.
+/-----------------------------------------------------------------------------\

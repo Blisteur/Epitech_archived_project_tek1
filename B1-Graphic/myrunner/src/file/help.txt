@@ -1,0 +1,24 @@
+Welcome to Dino game remake,
+the goal is to jump over all obstacles,
+
+INPUTS:
+    ALL TIME:
+        Press backspace to save and quit the game.
+    MENU:
+        Click on "Start game" to launch the game or press space.
+        Click on "Exit" to quit the game.
+    GAME:
+        Press space to jump.
+        Press enter to restart the map.
+    PAUSE:
+        Press escape in game for pause.
+        Press escape in pause for resume game.
+        Press enter to restart the map.
+    GAME OVER:
+        Press jump or enter to restart the game.
+        Click on GAME OVER to restart the game.
+
+USAGE:
+    "./my_runner map.txt" for start game with custom map.
+    "./my_runner -i" for start game with infinite mode.
+    "./my_runner -h" for seeing this usage and input.

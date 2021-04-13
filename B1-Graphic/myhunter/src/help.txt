@@ -1,0 +1,14 @@
+Welcome to a Duck-Hunt like game, based on the Pikmin theme,
+you should help to fight Pikmin's enemies to save them all ! Good luck !
+
+You have 3 lives which are represented by pikmin at the bottom in the middle of your screen,
+But be careful, more you fight the enemies, more the difficulty increases.
+
+Available imputs:
+mouse left click.
+
+Usage:
+    ./my_hunter
+        For launch the game.
+    ./my_hunter -h
+        For see this message.

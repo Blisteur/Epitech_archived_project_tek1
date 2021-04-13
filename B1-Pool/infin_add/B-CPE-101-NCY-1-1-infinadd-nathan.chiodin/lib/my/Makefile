@@ -1,0 +1,22 @@
+##
+## EPITECH PROJECT, 2020
+## makefile
+## File description:
+## Makefile
+##
+
+SRC	=	$(wildcard *.c)
+
+OBJ	=	$(SRC:.c=.o)
+
+NAME	=	libmy.a
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	ar rc $(NAME) $(OBJ)
+	rm -f *.o
+	cp $(NAME) ..
+	cp my.h ../../include/my.h
+clean:
+	rm -f *.o

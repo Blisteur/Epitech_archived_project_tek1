@@ -1,0 +1,134 @@
+char *factor(char **arg, int res_rec, char *p)
+{
+    char *result = malloc(sizeof(char) * my_strlen(arg[1]) + 1);
+    int val_1 = 0;
+    int val_2 = 0;
+    char operator;
+    int started = 1;
+
+    p = p == NULL ? arg[1] : p;
+    val_1 = my_strtol(p, &p, &started, my_strlen(arg[1]));
+    started = 0;
+    operator = *p;
+    val_2 = my_strtol(p, &p, &started, my_strlen(arg[1]));
+    switch (operator) {
+        case '*':
+
+            break;
+        case '/':
+
+            break;
+        case '%':
+
+            break;
+        default:
+            factor(arg, res_rec, p);
+            break;
+    }
+}
+
+void setup_result(char *result, int resultat)
+{
+}
+
+int summands(char *str_ptr, int res_rec, char *p)
+{
+    int exp1;
+    int exp2;
+    char ope;
+    int started = 1;
+
+    if (p != NULL && my_strlen(p) <= 0)
+        return (res_rec);
+    p = (p == NULL ? str_ptr : p);
+    exp1 = my_strtol(p, &p, &started, my_strlen(str_ptr));
+    started = 0;
+    ope = *p;
+    exp2 = my_strtol(p, &p, &started, my_strlen(str_ptr));
+    if (ope == '+')
+        res_rec += exp1 + exp2;
+    if (ope == '-')
+        res_rec += exp1 - exp2;
+    summands(str_ptr, res_rec, p);
+}
+
+int my_strtol(char *str, char **endptr, char *npi, int *p)
+{
+    int res = 0;
+    int count = 0;
+    int lock = 0;
+
+    while (str[count] != '\0') {
+        if (str[count] >= '0' && str[count] <= '9') {
+            npi[*p] = str[count];
+            *p += 1;
+            npi[*p] = '_';
+            *p += 1;
+            lock = 1;
+        }
+        if (str[count] < '0' && lock == 1 || str[count] > '9' && lock == 1)
+            break;
+        count++;
+    }
+    *endptr = &str[count];
+    return (res);
+}
+
+/*char *parenthesis(int count, char *src, int *pcount, char *result)
+{
+    int temp = 0;
+
+    for (; src[count] != ')'; count += 1, temp += 1) {
+        if (src[count] == '(');
+            src = my_strcat(src, parenthesis(count, src, &count, result));
+    }
+    *pcount += temp;
+    result = my_strcat(result, calculate(src));
+    return (result);
+}*/
+
+/*char *my_strcpyspe(char *dest, char const *src)
+{
+    int count = 0;
+    int subcount = 0;
+
+    for (; src[count] != '\0'; count += 1, subcount += 1) {
+        if (src[count] == '(')
+            dest = my_strcat(dest, parenthesis(count, src, &count, dest));
+        dest[subcount] = src[count];
+    }
+    dest = calculate(dest);
+    return (dest);
+}*/
+
+    printf("%d how many number\n", count_nb(str, 0));
+    printf("%sstring npi\n", npi);
+
+void make_npi(char *str, char *npi, int subcount)
+{
+    int count = 0;
+    char lastsign = 'x';
+
+    while (str[count] != '\0') {
+        printf("%c last sign\n", lastsign);
+        if (str[count] == '+' || str[count] == '-' || str[count] == '*'
+        || str[count] == '/' || str[count] == '%')
+        lastsign = str[count];
+        if (str[count] >= '0' && str[count] <= '9') {
+            npi[subcount] = str[count];
+            subcount += 1;
+        }
+        if (str[count] < '0' || str[count] > '9') {
+                if (lastsign == '*' || lastsign == '/' || lastsign == '%') {
+                    npi[subcount] = lastsign;
+                    subcount += 1;
+                }
+                if (str[count + 1] != '\0' && lastsign != '*'
+                || lastsign != '/' || lastsign != '%') {
+                    npi[subcount] = '_';
+                    subcount += 1;
+            }
+        }
+        count += 1;
+    }
+}
